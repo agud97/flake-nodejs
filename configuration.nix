@@ -34,7 +34,7 @@ in {
 };
   
   imports = [ "${modulesPath}/virtualisation/amazon-image.nix"
-		./sl-graph.nix
+#		./sl-graph.nix
    ];
   ec2.hvm = true;
 
@@ -48,7 +48,7 @@ in {
 #];  
 
 environment.systemPackages = [
-    inputs.slgraph.defaultPackage.x86_64-linux
+ #   inputs.slgraph.defaultPackage.x86_64-linux
     pkgs.tcpdump
     pkgs.vim
     pkgs.curl
@@ -63,14 +63,14 @@ nix = {
   '';
 };
 
-services.sl-graph.enable = true;
+#services.sl-graph.enable = true;
 #inputs.slgraph.within.services.sl-graph = {
 #    enable = true;
 #  };
   services.nginx = {
     enable = true;
     virtualHosts.${domain}.locations."/" = {
-      root = "${inputs.slweb.packages.${pkgs.system}.default}/lib/node_modules/sl-web-config/dist";
+ #     root = "${inputs.slweb.packages.${pkgs.system}.default}/lib/node_modules/sl-web-config/dist";
       #root = "${inputs.slweb.packages.x86_64-linux.sl-web-config/lib/node_modules/sl-web-config/dist}";
 #      root = inputs.sourcecode; 
    #  root = my-source.source-code;

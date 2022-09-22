@@ -1,8 +1,8 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-22.05";
-    slgraph.url = "path:/etc/nixos/sl-graph";
-    slweb.url   =  "path:/root/sl_web-config";
+ #   slgraph.url = "path:/etc/nixos/sl-graph";
+ #   slweb.url   =  "path:/root/sl_web-config";
     #slgraph-module.url = "path:/etc/nixos/sl-graph-module";
     flake-utils.url = "github:numtide/flake-utils";
 #    sourcecode = {
@@ -10,7 +10,7 @@
 #  	flake = false;
 #    };
   };
-  outputs = { self, nixpkgs, slweb, slgraph, flake-utils  }@inputs:  
+  outputs = { self, nixpkgs, flake-utils  }@inputs:  
     let 
       system = "x86_64-linux";
       lib = nixpkgs.lib;
