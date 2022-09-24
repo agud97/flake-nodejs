@@ -1,0 +1,38 @@
+@import "_var.module.sass"
+@import "reset.sass"
+@import "form.sass"
+
+html
+  height: 100%
+body
+  background: $bodyBgColor
+  color: $fontColor
+  font-family: Roboto
+  font-size: 14px
+  font-style: normal
+  font-weight: 400
+  letter-spacing: 0em
+  min-height: 100%
+  overflow-x: hidden
+
+#app
+  height: 100%
+
+.custom-btn
+  background: transparent
+  border: 1px solid #535564
+  color: $fontColor
+  &:hover
+    background: $customButtonColorHover
+
+.status
+  width: 31px
+  height: 10px
+  border-radius: 5px
+  &.good
+    background: $green
+  &.normal
+    background: $yellow 
+  &.bad
+    background: $red
+

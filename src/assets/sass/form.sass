@@ -1,0 +1,319 @@
+@import "_var.module.sass"
+
+::-webkit-scrollbar
+  background: transparent
+  width: 4px
+  height: 4px
+  position: absolute
+
+::-webkit-scrollbar-track
+  background: transparent
+  position: absolute
+  z-index: -2
+  background: rgba(189,189,189,0.3)
+
+::-webkit-scrollbar-thumb
+  background: #5c5c5c
+
+::-webkit-scrollbar-thumb:hover
+  background: #000
+
+a,.a
+  color: #A0A4B2
+  text-decoration: underline
+  cursor: pointer
+
+hr
+  border: none
+  border-top: solid 1px $border
+  clear: both
+
+h1,h2,h3,h4,h5,h6,.h
+  text-transform: uppercase
+  display: block
+
+.contents-block
+  ul, ol
+    list-style: none
+    list-style-position: inside
+    padding: 0 0 0 20px
+
+  ul li
+    padding: 0
+    list-style: square outside
+  ol li
+    padding: 0
+    list-style: decimal outside
+
+p,.p
+  padding: 10px 0
+
+  &:first-child
+    padding-top: 0
+  &:last-child
+    padding-bottom: 0
+table
+  border-collapse: collapse
+  width: 100%
+  td
+    padding: 8px
+    border: 1px solid #747474
+  th
+    padding: 8px
+    border: 1px solid #747474
+    background: $inputBgColor
+    font-weight: 600
+
+  th
+button, .button
+  font-size: 16px
+  display: inline-block
+  background: $buttonColor
+  border: 1px solid $borderButton
+  border-radius: 4px
+  padding: 8px 20px
+  cursor: pointer
+  color: $whiteFont
+  margin: 0px
+  text-align: center
+  text-decoration: none
+  height: fit-content
+  transition: all 200ms linear
+
+  &:hover
+    background: $buttonColorHover
+    transition-duration: .2s
+    border-color:$buttonBorderHover
+  &:active
+    transition: all 10ms linear
+    background: $buttonBackgroundActive
+
+  &:disabled, &:disabled:hover
+    background: $buttonBackgroundDisabled
+    color: $buttonFontDisabled
+    border: 1px solid $borderButton
+    cursor: default
+
+.disabled
+  background: #949494 !important
+  color: #5c5c5c !important
+  pointer-events: none
+
+select
+  background: $inputBgColor
+  width: 300px
+  border-radius: 5px
+  color: $inputFontColor
+  padding: 3px
+  border: 1px solid $border
+
+
+input, textarea
+  padding: 3px
+  border-radius: 3px
+  color: $inputFontColor
+  border: 1px solid $border
+  width: 300px
+  background-color: $inputBgColor
+  appearance: none
+  height: 30px
+
+  &[type='time']
+    width: inherit
+
+  &::-webkit-input-placeholder
+    text-overflow: ellipsis
+    color: $formPlaceholderColor
+    font-weight: normal
+    line-height: 20px
+    opacity: 1
+    transition: line-height 0.5s ease, opacity 0.5s ease
+
+  &::-moz-placeholder
+    text-overflow: ellipsis
+    color: $formPlaceholderColor
+    font-weight: normal
+    line-height: 18px
+    opacity: 1
+    transition: line-height 0.5s ease, opacity 0.5s ease
+
+  &::-ms-input-placeholder
+    text-overflow: ellipsis
+    color: $formPlaceholderColor
+    font-weight: normal
+    line-height: 20px
+    opacity: 1
+    transition: line-height 0.5s ease, opacity 0.5s ease
+
+  &:focus::-moz-placeholder
+    opacity: 0
+  &:focus::-webkit-input-placeholder
+    opacity: 0
+  &:focus::-ms-input-placeholder
+    opacity: 0
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:active,
+  &:-webkit-autofill:focus
+    color: #555 !important
+  &:focus
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f
+.checkbox
+  &.no-label
+    width: 20px
+    height: 20px
+    display: inline-block
+    position: relative
+    margin-top: 5px
+
+    input
+      position: absolute
+      top: 0
+      left: 0
+
+    label
+      width: 20px
+      height: 20px
+      padding: 0
+      position: absolute
+      top: 0
+      left: 0
+
+input[type=checkbox]
+  height: 20px
+  width: 20px
+  padding: 0
+  cursor: pointer
+  appearance: auto
+  -webkit-appearance: auto
+  display: none
+
+  &+label
+    display: flex
+    position: relative
+    padding: 0 0 0 30px
+    cursor: pointer
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 20px
+      height: 20px
+      border: 1px solid $border
+      border-radius: 3px
+      background: #3E4258
+
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 20px
+      height: 20px
+      border-radius: 3px
+      opacity: 0
+      transition: 0.3s
+
+  &:checked + label:after
+    content: url(@/assets/svg/check.svg)
+    text-align: center
+    opacity: 1
+
+input[type=radio]
+  height: 20px
+  width: 20px
+  padding: 0
+  cursor: pointer
+  appearance: auto
+  -webkit-appearance: auto
+  display: none
+
+  &+label
+    display: flex
+    position: relative
+    padding: 0 0 0 30px
+    cursor: pointer
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 20px
+      height: 20px
+      border-radius: 100%
+      border: 1px solid $border
+      background: #3E4258
+
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 20px
+      height: 20px
+      border-radius: 3px
+      opacity: 0
+      transition: 0.3s
+
+  &:checked + label:after
+    border-radius: 100%
+    background: #AFB6C0
+    border: 6px solid #484B60
+    text-align: center
+    opacity: 1
+
+
+input[type=range]
+  padding: 0 
+  height: 0
+  &::-webkit-slider-runnable-track
+    -webkit-appearance: none
+    background: gray
+    height: 2px
+
+  &:focus
+    outline: none
+
+  &::-moz-range-track
+    -moz-appearance: none
+    background: gray
+    height: 2px
+
+  &::-webkit-slider-thumb
+    -webkit-appearance: none
+    border: 2px solid
+    border-radius: 50%
+    height: 25px
+    width: 25px
+    max-width: 80px
+    position: relative
+    bottom: 11px
+    background-color: #1d1c25
+    cursor: -webkit-grab
+    -webkit-transition: border 1000ms ease
+    transition: border 1000ms ease
+
+  &::-moz-range-thumb
+    -moz-appearance: none
+    border: 2px solid
+    border-radius: 50%
+    height: 25px
+    width: 25px
+    max-width: 80px
+    position: relative
+    bottom: 11px
+    background-color: #1d1c25
+    cursor: -moz-grab
+    -moz-transition: border 1000ms ease
+    transition: border 1000ms ease
+
+input[type=range]
+  &::-webkit-slider-thumb:active
+    cursor: -webkit-grabbing
+
+  &::-moz-range-thumb:active
+    cursor: -moz-grabbing
